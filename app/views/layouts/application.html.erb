@@ -4,6 +4,7 @@
   <title>Bonsai4u</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+   
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -28,13 +29,15 @@
 				<h1><a rel="nofollow" href="http://www.templatemo.com"><img src="/assets/templatemo_logo.png" alt="Logo" /></a></h1>
 			</div> <!-- end of site_title -->    
 			<div id="header_content">
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ante leo, consectetur eget adipiscing et, pharetra ac mauris. </p>
+				
+				
+
 				<a href="#" class="more">More</a>
 			</div>
 		</div>
 		
 		<div id="templatemo_main">
+			<%= yield %>
 		
 			<div id="frontpage_services">
 			
@@ -110,7 +113,9 @@
     </div> <!-- end of templatemo_footer -->
 </div>
 
-<%= yield %>
+
+<script src="javascript/bootstrap.js"></script>
+
 
 </body>
 </html>

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141002145923) do
+ActiveRecord::Schema.define(version: 20141008153455) do
+
+  create_table "stores", force: true do |t|
+    t.string   "plant_name"
+    t.string   "height"
+    t.decimal  "price",              precision: 8, scale: 2
+    t.text     "description"
+    t.string   "plant_type"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

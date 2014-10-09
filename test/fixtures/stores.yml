@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plantname: MyString
+  height: MyString
+  price: 9.99
+  description: MyText
+  type: 
+
+two:
+  plantname: MyString
+  height: MyString
+  price: 9.99
+  description: MyText
+  type: 

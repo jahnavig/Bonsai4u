@@ -1,0 +1,37 @@
+<h1>Listing Plants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Plantname</th>
+      <th>Height</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Plant Type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= image_tag store.image.url(:thumb) %></td>
+        <td><%= store.plant_name %></td>
+        <td><%= store.height %></td>
+        <td><%= store.price %></td>
+        <td><%= store.description %></td>
+        <td><%= store.plant_type %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Store', new_store_path %>

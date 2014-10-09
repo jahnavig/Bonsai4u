@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plantname:</strong>
+  <%= @store.plant_name %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @store.height %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @store.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @store.description %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @store.plant_type %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @store.image.url(:thumb) %>
+<!--<%= image_tag @store.image.url ,:height=>"200",:width=>"200"%> -->
+</p>
+
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>

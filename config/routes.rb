@@ -1,16 +1,28 @@
 Bonsai4u::Application.routes.draw do
 
+  get "bonsai_gallery/index"
+  get "bonsai_gallery/checkout"
+  get "bonsai_gallery/search"
+  resources :stores
+
+  get "admin/login"
+  post "admin/login"
+  get "admin/logout"
   get "account/index"
   get "account/signup"
+  post "account/signup"
+  post "account/login"
   get "account/login"
+  post "account/forget_password"
   get "account/forget_password"
   get "account/reset_password"
+  post "account/reset_password"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'bonsai_gallery#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

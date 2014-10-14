@@ -1,20 +1,41 @@
-<h2>Login</h2>
+<section id = "body" class = "container">
+    
+    <div class= "row">
+    <h2 style="align:center;">Login</h2>
 <%= flash[:notice] %>
-<%= form_for(:user) do |f| %>
-
-    <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%#= form_for(:user), :class => "form-horizontal" do |f| %>
+ <%= form_for(:user, :html=>{:class =>"form-horizontal center"}) do |f| %>
 
 
-<%= link_to "Forget your password?" ,:controller=>"account",:action=>"forget_password" %>
+    <div class="form-group">
+        <%= f.label :email, "Email:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :email, class: "form-control" , placeholder: "Email"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, "Password:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :password, class: "form-control", placeholder: "password" %>
+        </div>
+      </div>
+       <div class="form-group center">
+      <div class="checkbox col-sm-offset-2 col-sm-10">
+        <%= f.check_box :workshop %> Remember Password
+      </div>
+      </div>
+
+            <div class = "form-group col-sm-offset-2 col-sm-10 form-actions">
+                  <%= f.submit "Submit", class: "btn btn-default btn-success" %>  
+    </div>
+  
+  <% end %>
+
+</div>
+<%= link_to "Forgot password?" ,:controller=>"account",:action=>"forget_password" %>
+<%= link_to "NewUser?" ,:controller=>"account",:action=>"signup" %>
+
+
+
+</section>
+

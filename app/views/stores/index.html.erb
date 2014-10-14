@@ -16,9 +16,9 @@
   </thead>
 
   <tbody>
-    <% @stores.each do |store| %>
+    <%  @stores.each do |store| %>
       <tr>
-        <td><%= image_tag store.image.url(:thumb) %></td>
+        <td><%= image_tag store.image.url(:medium) %></td>
         <td><%= store.plant_name %></td>
         <td><%= store.height %></td>
         <td><%= store.price %></td>

@@ -1,11 +1,12 @@
 class StoresController < ApplicationController
   before_filter :authorize
   before_action :set_store, only: [:show, :edit, :update, :destroy]
+  include current_cart
 
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all
+    @stores = Store.order(:plant_name)
   end
 
   # GET /stores/1

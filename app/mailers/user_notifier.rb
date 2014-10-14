@@ -14,6 +14,13 @@ class UserNotifier < ActionMailer::Base
    def reset_password(user)
    	@user = user
    	mail(:to=> @user.email, :subject=>"password has been changed")
+   end
+
+   def purchase_complete(user, cart)
+    @user = user
+    @cart=cart
+    mail(:to => (user.email), :subject => "Your order has been processed!")
+    end
 end
 
 

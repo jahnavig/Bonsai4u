@@ -1,2 +1,72 @@
-<h1>BonsaiGallery#checkout</h1>
-<p>Find me in app/views/bonsai_gallery/checkout.html.erb</p>
+<%= flash[:notice] %>
+<%= form_for(:check, :html=>{:class =>"form-horizontal center"}) do |f| %>
+  
+    <div class="form-group">
+        <%= f.label :first_name, "FirstName:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :first_name, class: "form-control" , placeholder: "FirstName"%>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :last_name, "FirstName:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :last_name, class: "form-control" , placeholder: "LastName"%>
+        </div>
+    </div>
+     <div class="form-group">
+        <%= f.label :credit_card_no, "CreditCard Number:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :credit_card_no, class: "form-control" , placeholder: "Credit Card Number"%>
+        </div>
+    </div>
+  
+  
+  <div class="field">
+    <%= f.label :date_of_expiry %><br />
+    	<select name="check[month]" id="check_out_month">
+		<option selected value="01">Janurary 
+		<option  value="02">Feburary
+		<option  value="03">March
+		<option  value="04">April 
+		<option  value="05">May 
+		<option  value="06">June 
+		<option  value="07">July 
+		<option  value="08">August 
+		<option  value="09">September 
+		<option  value="10">October 
+		<option  value="11">November 
+		<option  value="12">December 
+		</select>
+		<select name="check[year]" id="check_out_year">
+		<option selected value="2013">2013
+		<option  value="2014">2014
+		<option  value="2015">2015
+		<option  value="2016">2016
+		<option  value="2017">2017
+		<option  value="2018">2018
+		<option  value="2019">2019
+		<option  value="2020">2020
+		<option  value="2021">2021
+		<option  value="2022">2022
+		<option  value="2023">2023
+		<option  value="2024">2024
+		<option  value="2025">2025
+	</select>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :payment_type %><br />
+    <select name="payment_type"><option value="visa">Visa</option></option><option value="mastercard">Master Card</option></select>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :verification_number, "verification Number:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :verification_number, :size => 2 , class: "form-control", placeholder: "verification_number" %>
+        </div>
+      </div>
+  
+   <div class = "form-groupcol-sm-offset-2 col-sm-10">
+                  <%= f.submit "Submit", class: "btn btn-default btn-success" %>  
+  <% end %>

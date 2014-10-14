@@ -1,0 +1,26 @@
+ <table align="center" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="center">
+                          <h1 style="color:#e74c3c;font-size:22px;font-family:Calibri;font-weight:normal;"> Hello <%= @user.name %></h1>
+                          <h2 style="color:#27ae60;font-size:18px;font-family:Calibri;font-weight:normal;"> Thank you for shopping with us. </h2>
+                          <p style="color:#2c3e50;font-family:Calibri;font-size:18px;line-height:20px;margin:10px 0 15px 0;">
+						  
+						  your order has been processed.
+						  
+						  here are the details
+						  
+						  <% @cart.line_items.each do |item|%>
+						  Product Name: <%= item.store.product_name%>
+						  Product Price:<%= number_to_currency(item.store.price)%>
+						  
+						  <% end %>
+			                          </p>
+			                          
+                          
+                          
+                        </td>
+                      </tr>
+                    </table>
+
+	<%= link_to "Continue Shopping",:controller=>"bonsai_gallery",:action=>"index" %> | 
+

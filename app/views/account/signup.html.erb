@@ -1,6 +1,10 @@
+<section id = "body" class = "container">
+    
+    <div class= "row">
+
 <h2>Signup<h2>
 
-<%= form_for(:user) do |f|%>
+<%= form_for(:user, :html=>{:class =>"form-horizontal center"}) do |f|%>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,26 +17,35 @@
     </div>
   <% end %>
 
- 
-  
-    <%= f.label :name %><b style="color:#ff0000; font-size:16px;">*</b><br>
- 
-    <%= f.text_field :name, placeholder: "Name" %><br/><br/>
-
     
-  
-    <%= f.label :email %><b style="color:#ff0000; font-size:16px;">*</b><br/>
-    <%= f.text_field :email, class: "form-control", placeholder: "Email" %><br/><br/>
-  
-     <%= f.label :password%><b style="color:#ff0000; font-size:16px;">*</b><br/>
- 
-    <%= f.password_field :password, placeholder: "Password" %><br/><br/>
+    <div class="form-group">
+        <%= f.label :name, "Name:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "form-control" , placeholder: "Name"%>
+        </div>
+      </div>
+    <div class="form-group">
+        <%= f.label :email, "Email:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :email, class: "form-control" , placeholder: "Email"%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, "Password:", class: "col-sm-2 control-label" %>
+        <div class="col-sm-4">
+          <%= f.text_field :password, class: "form-control" , placeholder: "Password"%>
+        </div>
+      </div>
 
-    <%= f.label :password %><br/>
+      
+      <%= f.label :password %><br/>
      
         <%= f.password_field :confirm_password, placeholder: "confirm password" %><br/><br/>
     
-    <%= f.submit%>
-  </div>
-</div>
+   <div class = "form-groupcol-sm-offset-2 col-sm-10 form-actions">
+                  <%= f.submit "Submit", class: "btn btn-default btn-success" %>  
+    </div>
+  
    <% end %>
+  </div>
+</section>

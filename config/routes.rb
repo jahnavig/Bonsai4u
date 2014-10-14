@@ -1,8 +1,20 @@
 Bonsai4u::Application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
+ # get "carts/index"
+
   get "bonsai_gallery/index"
   get "bonsai_gallery/checkout"
   get "bonsai_gallery/search"
+  post "bonsai_gallery/search"
+  post "bonsai_gallery/checkout"
+  get "bonsai_gallery/purchase_complete"
+  post "bonsai_gallery/purchase_complete"
+
+
   resources :stores
 
   get "admin/login"
@@ -13,6 +25,7 @@ Bonsai4u::Application.routes.draw do
   post "account/signup"
   post "account/login"
   get "account/login"
+  get "account/contactus"
   post "account/forget_password"
   get "account/forget_password"
   get "account/reset_password"

@@ -1,0 +1,24 @@
+ <%= will_paginate @bonsai_gallery %>
+
+  <table>
+  <tr>
+  	<% count = 0 %>
+  	<% @bonsai_gallery.each do |plant| %>
+  	<% if(count % 3) == 0 %>
+  </tr>
+  <tr>
+  <% end %>
+  <% count+=1 %>
+  	<td>
+  		<%= image_tag plant.image.url(:medium) %><br/>
+  	<h4>	Name: <%= plant.plant_name %><br/> </h4>
+  	<h5>	Height: <%= plant.height %> </h5><br/>
+  	<h5>	Price: $<%= plant.price %></h5> <br/>
+     <h5> Type: <%= plant.plant_type %> </h5><br/>
+  	<h5>	Description:</h5> <%= plant.description %><br/>
+  	
+  		<%= button_to :'Add to Cart', line_items_path(store_id: plant), :class=>"cartButton" %>
+   	</td>
+  <% end %>
+  </tr>
+</table>
